@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-upstream
+  labels:
+    app: service-upstream
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: service-upstream
+  template:
+    metadata:
+      labels:
+        app: service-upstream
+    spec:
+      containers:
+        - name: service-upstream
+          image: abaloghbiro/service-upstream:latest
+          ports:
+            - containerPort: 8080
