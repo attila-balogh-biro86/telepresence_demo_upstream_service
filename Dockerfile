@@ -23,7 +23,7 @@ COPY --from=builder /home/gradle/project/build/libs/*.jar /app/app.jar
 # Expose the port the app runs on
 EXPOSE 8080
 
-ENV EXTERNAL_API_HOSTNAME=service-downstream:8080
+ENV EXTERNAL_API_HOSTNAME=service-downstream
 
 # Command to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
